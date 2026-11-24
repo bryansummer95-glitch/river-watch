@@ -1,0 +1,13 @@
+{
+  "name": "river-watch",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-11-24",
+  "ratelimits": [
+    {
+      "name": "EXPLANATION_LIMIT",
+      "namespace_id": "1010",
+      "simple": { "limit": 10, "period": 60 }
+    }
+  ]
+}
+
