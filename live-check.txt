@@ -1,0 +1,21 @@
+Public Sheet export
+HTTP 200 (text/csv; charset=utf-8)
+Sheet validation: Sheet column names or order changed
+Public historical summary
+HTTP 200
+https://bryansummer95-glitch.github.io/river-watch/
+200
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>River Watch</title>
+<style>
+  :root{font-family:system-ui,sans-serif;color:#132d38;background:#edf3f4}
+  *{box-sizing:border-box} body{margin:0} header{background:#1036
+https://river-watch.bryansummer95.workers.dev/health
+200
+{"service":"River Watch"}
+Explanation route
+{"text":"**River Watch – Rehearsal Result Summary**\n\n- **Discharge Unit:** cubic metres per second (m³/s)  \n- **Rehearsal Label:** “Rehearsal result”  \n- **Towns Involved:** Clonmel  \n  - **Current Level:** Standby  \n  - **Peak Discharge Recorded:** 50 m³/s  \n  - **Reason for Standby Status:** This was a rehearsed exercise; no real‑time threat was detected, so the town remains on standby.  \n\n**Key Points**\n\n- The exercise confirmed that the peak discharge threshold for Clonmel is 50 m³/s.\n- All crews were assigned and coordinated per the standard operating plan.\n- Uncertainty: None noted in the data provided.\n\n*Decision Authority:* The Duty Officer will review these findings and decide on any further action.","usage":{"queue_time":0.083476418,"prompt_tokens":177,"prompt_time":0.008602597,"completion_tokens":227,"completion_time":0.234030521,"total_tokens":404,"total_time":0.242633118,"completion_tokens_details":{"reasoning_tokens":41}}}
+200
