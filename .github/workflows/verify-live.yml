@@ -1,0 +1,30 @@
+name: Verify public River Watch endpoints
+on:
+  push:
+    paths: ['.github/workflows/verify-live.yml']
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check deployment and relay
+        run: |
+          {
+            for url in 'https://bryansummer95-glitch.github.io/river-watch/' 'https://river-watch.bryansummer95.workers.dev/health'; do
+              echo "$url"
+              curl -sS --max-time 15 -o /tmp/river-body -w '%{http_code}\n' "$url" && head -c 300 /tmp/river-body
+              echo
+            done
+            echo 'Explanation route'
+            curl -sS --max-time 20 -w '\n%{http_code}\n' 'https://river-watch.bryansummer95.workers.dev/explain' \
+              -H 'Origin: https://bryansummer95-glitch.github.io' -H 'Content-Type: application/json' \
+              --data '{"facts":{"question":"Summarise the rehearsal result","towns":[{"town":"Clonmel","level":"Standby","peak":50,"reason":"Rehearsal result"}]}}'
+          } > live-check.txt 2>&1
+          git switch -c live-endpoint-check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add live-check.txt
+          git commit -m 'Record public endpoint check'
+          git push origin live-endpoint-check
