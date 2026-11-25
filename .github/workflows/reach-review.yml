@@ -1,0 +1,47 @@
+name: Review nearby GloFAS reaches
+on:
+  push:
+    paths: ['.github/workflows/reach-review.yml']
+permissions:
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Probe nearby grid cells and save evidence
+        run: |
+          node --input-type=module <<'JS' > reach-probes.json
+          import {towns} from './plan.mjs';
+          const result = {};
+          for (const [town, [latitude, longitude]] of Object.entries(towns)) {
+            const points = [];
+            for (let north = -2; north <= 2; north++) for (let east = -2; east <= 2; east++) {
+              points.push([latitude + north * .05, longitude + east * .05].map(n => +n.toFixed(4)));
+            }
+            const params = new URLSearchParams({
+              latitude: points.map(p => p[0]).join(','), longitude: points.map(p => p[1]).join(','),
+              daily:'river_discharge', models:'seamless_v4', start_date:'2024-01-01', end_date:'2024-12-31'
+            });
+            try {
+              const response = await fetch('https://flood-api.open-meteo.com/v1/flood?' + params, {signal:AbortSignal.timeout(20000)});
+              if (!response.ok) throw Error('HTTP ' + response.status);
+              const samples = await response.json();
+              result[town] = samples.map((row, i) => {
+                const data = row.daily.river_discharge.filter(Number.isFinite);
+                return {requested:points[i], grid:[row.latitude,row.longitude], days:data.length,
+                  mean: +(data.reduce((a,b) => a+b,0)/data.length).toFixed(2)};
+              }).sort((a,b) => b.mean - a.mean);
+            } catch (error) { result[town] = error.message; }
+          }
+          console.log(JSON.stringify(result, null, 2));
+          JS
+          git switch -c reach-review
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reach-probes.json
+          git commit -m 'Record candidate discharge by nearby model cell'
+          git push origin reach-review
