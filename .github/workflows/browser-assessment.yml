@@ -95,9 +95,10 @@ jobs:
       - name: Make text evidence available for review
         if: always()
         run: |
-          git switch -c sheet-rehearsal-evidence
+          git switch -c sheet-rehearsal-complete
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          printf '%s\n' 'https://github.com/bryansummer95-glitch/river-watch/actions/runs/'"$GITHUB_RUN_ID" > evidence/actions-run.txt
           git add evidence/*.txt
           git commit -m 'Record browser and independent percentile checks'
-          git push origin sheet-rehearsal-evidence
+          git push origin sheet-rehearsal-complete
