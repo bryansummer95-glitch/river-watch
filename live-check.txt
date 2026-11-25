@@ -1,0 +1,18 @@
+Public Sheet export
+HTTP 200 (text/csv; charset=utf-8)
+Validated Sheet rows: 8
+Public historical summary
+HTTP 200
+https://bryansummer95-glitch.github.io/river-watch/
+200
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>River Watch</title>
+<style>
+  :root{font-family:system-ui,sans-serif;color:#132d38;background:#edf3f4}
+  *{box-sizing:border-box} body{margin:0} header{background:#1036
+https://river-watch.bryansummer95.workers.dev/health
+200
+{"service":"River Watch"}
