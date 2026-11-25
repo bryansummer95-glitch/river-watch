@@ -1,0 +1,241 @@
+{
+  "start": "2016-01-01",
+  "end": "2025-12-31",
+  "model": "seamless_v4",
+  "retrieved": "2026-11-25T08:32:13.969Z",
+  "reachVerification": "Unverified model cells. Compare against independent river evidence before relying on these figures.",
+  "towns": {
+    "Clonmel": {
+      "days": 3653,
+      "median": 21.65,
+      "p95": 66.3,
+      "p99": 107.88000000000001,
+      "events": {
+        "2016/17": 0,
+        "2017/18": 0,
+        "2018/19": 0,
+        "2019/20": 2,
+        "2020/21": 3,
+        "2021/22": 2,
+        "2022/23": 1,
+        "2023/24": 2,
+        "2024/25": 1
+      },
+      "total": 11,
+      "firstFour": 2,
+      "lastFour": 6,
+      "source": "https://flood-api.open-meteo.com/v1/flood?latitude=52.352&longitude=-7.704&daily=river_discharge&models=seamless_v4&start_date=2016-01-01&end_date=2025-12-31",
+      "requested": [
+        52.352,
+        -7.704
+      ],
+      "grid": [
+        52.375,
+        -7.724991
+      ]
+    },
+    "Fermoy": {
+      "days": 3653,
+      "median": 24.41,
+      "p95": 77.23199999999993,
+      "p99": 127.82,
+      "events": {
+        "2016/17": 0,
+        "2017/18": 0,
+        "2018/19": 0,
+        "2019/20": 1,
+        "2020/21": 3,
+        "2021/22": 0,
+        "2022/23": 1,
+        "2023/24": 2,
+        "2024/25": 3
+      },
+      "total": 10,
+      "firstFour": 1,
+      "lastFour": 6,
+      "source": "https://flood-api.open-meteo.com/v1/flood?latitude=52.139&longitude=-8.226&daily=river_discharge&models=seamless_v4&start_date=2016-01-01&end_date=2025-12-31",
+      "requested": [
+        52.139,
+        -8.226
+      ],
+      "grid": [
+        52.125,
+        -8.224991
+      ]
+    },
+    "Mallow": {
+      "days": 3653,
+      "median": 13.96,
+      "p95": 44.6,
+      "p99": 71.33000000000003,
+      "events": {
+        "2016/17": 1,
+        "2017/18": 0,
+        "2018/19": 0,
+        "2019/20": 1,
+        "2020/21": 3,
+        "2021/22": 1,
+        "2022/23": 1,
+        "2023/24": 3,
+        "2024/25": 3
+      },
+      "total": 13,
+      "firstFour": 2,
+      "lastFour": 8,
+      "source": "https://flood-api.open-meteo.com/v1/flood?latitude=52.133&longitude=-8.643&daily=river_discharge&models=seamless_v4&start_date=2016-01-01&end_date=2025-12-31",
+      "requested": [
+        52.133,
+        -8.643
+      ],
+      "grid": [
+        52.125,
+        -8.624985
+      ]
+    },
+    "Bandon": {
+      "days": 3653,
+      "median": 5.84,
+      "p95": 23.913999999999977,
+      "p99": 41.45720000000001,
+      "events": {
+        "2016/17": 0,
+        "2017/18": 0,
+        "2018/19": 0,
+        "2019/20": 1,
+        "2020/21": 2,
+        "2021/22": 0,
+        "2022/23": 0,
+        "2023/24": 3,
+        "2024/25": 5
+      },
+      "total": 11,
+      "firstFour": 1,
+      "lastFour": 8,
+      "source": "https://flood-api.open-meteo.com/v1/flood?latitude=51.747&longitude=-8.689&daily=river_discharge&models=seamless_v4&start_date=2016-01-01&end_date=2025-12-31",
+      "requested": [
+        51.747,
+        -8.689
+      ],
+      "grid": [
+        51.725006,
+        -8.674988
+      ]
+    },
+    "Enniscorthy": {
+      "days": 3653,
+      "median": 10.67,
+      "p95": 29.857999999999972,
+      "p99": 52.3924,
+      "events": {
+        "2016/17": 0,
+        "2017/18": 1,
+        "2018/19": 0,
+        "2019/20": 1,
+        "2020/21": 1,
+        "2021/22": 0,
+        "2022/23": 0,
+        "2023/24": 2,
+        "2024/25": 2
+      },
+      "total": 7,
+      "firstFour": 2,
+      "lastFour": 4,
+      "source": "https://flood-api.open-meteo.com/v1/flood?latitude=52.502&longitude=-6.563&daily=river_discharge&models=seamless_v4&start_date=2016-01-01&end_date=2025-12-31",
+      "requested": [
+        52.502,
+        -6.563
+      ],
+      "grid": [
+        52.525,
+        -6.574997
+      ]
+    },
+    "Ennis": {
+      "days": 3653,
+      "median": 10.04,
+      "p95": 31.09199999999997,
+      "p99": 45.393600000000006,
+      "events": {
+        "2016/17": 1,
+        "2017/18": 0,
+        "2018/19": 1,
+        "2019/20": 5,
+        "2020/21": 1,
+        "2021/22": 0,
+        "2022/23": 3,
+        "2023/24": 5,
+        "2024/25": 1
+      },
+      "total": 17,
+      "firstFour": 7,
+      "lastFour": 9,
+      "source": "https://flood-api.open-meteo.com/v1/flood?latitude=52.845&longitude=-9.031&daily=river_discharge&models=seamless_v4&start_date=2016-01-01&end_date=2025-12-31",
+      "requested": [
+        52.845,
+        -9.031
+      ],
+      "grid": [
+        52.825005,
+        -9.024994
+      ]
+    },
+    "Athlone": {
+      "days": 3653,
+      "median": 67.08,
+      "p95": 142.3519999999999,
+      "p99": 186.7064,
+      "events": {
+        "2016/17": 0,
+        "2017/18": 0,
+        "2018/19": 0,
+        "2019/20": 1,
+        "2020/21": 0,
+        "2021/22": 0,
+        "2022/23": 0,
+        "2023/24": 0,
+        "2024/25": 0
+      },
+      "total": 1,
+      "firstFour": 1,
+      "lastFour": 0,
+      "source": "https://flood-api.open-meteo.com/v1/flood?latitude=53.423&longitude=-7.993&daily=river_discharge&models=seamless_v4&start_date=2016-01-01&end_date=2025-12-31",
+      "requested": [
+        53.423,
+        -7.993
+      ],
+      "grid": [
+        53.425003,
+        -7.974991
+      ]
+    },
+    "Carrick-on-Shannon": {
+      "days": 3653,
+      "median": 21.86,
+      "p95": 62.24,
+      "p99": 88.8408,
+      "events": {
+        "2016/17": 0,
+        "2017/18": 1,
+        "2018/19": 1,
+        "2019/20": 2,
+        "2020/21": 5,
+        "2021/22": 1,
+        "2022/23": 1,
+        "2023/24": 0,
+        "2024/25": 1
+      },
+      "total": 12,
+      "firstFour": 4,
+      "lastFour": 3,
+      "source": "https://flood-api.open-meteo.com/v1/flood?latitude=53.945&longitude=-8.096&daily=river_discharge&models=seamless_v4&start_date=2016-01-01&end_date=2025-12-31",
+      "requested": [
+        53.945,
+        -8.096
+      ],
+      "grid": [
+        53.925003,
+        -8.074997
+      ]
+    }
+  }
+}
