@@ -19,13 +19,13 @@ jobs:
         continue-on-error: true
       - name: Save candidate results on a review branch
         run: |
-          git switch -c history-candidate
+          git switch -c history-review-2
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add history-download.log
           if test -f history.json; then git add history.json; fi
           git commit -m 'Record candidate River Watch history'
-          git push origin history-candidate
+          git push origin history-review-2
       - name: Confirm a complete download
         run: test -s history.json
       - uses: actions/upload-artifact@v4
