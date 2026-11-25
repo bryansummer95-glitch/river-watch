@@ -1,0 +1,16 @@
+https://bryansummer95-glitch.github.io/river-watch/
+200
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>River Watch</title>
+<style>
+  :root{font-family:system-ui,sans-serif;color:#132d38;background:#edf3f4}
+  *{box-sizing:border-box} body{margin:0} header{background:#1036
+https://river-watch.bryansummer95.workers.dev/health
+200
+{"service":"River Watch"}
+Explanation route
+{"text":"**Rehearsal Result Summary (Clonmel)**  \n\n- **Discharge unit:** cubic metres per second (m³/s)  \n- **Town status:** Clonmel is on **Standby**.  \n- **Peak discharge observed:** 50 m³/s.  \n- **Reason for Standby:** The figure represents the outcome of a rehearsal exercise, not an actual flood event. The Duty Officer has reviewed the data and decided to keep the town on standby rather than activate full flood response measures.","usage":{"queue_time":0.223401573,"prompt_tokens":177,"prompt_time":0.009978826,"completion_tokens":120,"completion_time":0.125647949,"total_tokens":297,"total_time":0.135626775,"completion_tokens_details":{"reasoning_tokens":6}}}
+200
