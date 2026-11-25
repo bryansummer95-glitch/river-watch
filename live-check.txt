@@ -1,0 +1,16 @@
+https://bryansummer95-glitch.github.io/river-watch/
+200
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>River Watch</title>
+<style>
+  :root{font-family:system-ui,sans-serif;color:#132d38;background:#edf3f4}
+  *{box-sizing:border-box} body{margin:0} header{background:#1036
+https://river-watch.bryansummer95.workers.dev/health
+200
+{"service":"River Watch"}
+Explanation route
+{"text":"**Rehearsal result – Clonmel**\n\n- **Current status:** *Standby*  \n- **Peak demand forecast for this rehearsal:** 50 kW  \n- **Reason for Standby status:** The result of the current rehearsal calculation.  \n\nNo additional details are required, and the duty officer retains decision authority.","usage":{"queue_time":0.221856775,"prompt_tokens":162,"prompt_time":0.007793444,"completion_tokens":87,"completion_time":0.089200201,"total_tokens":249,"total_time":0.096993645,"completion_tokens_details":{"reasoning_tokens":11}}}
+200
