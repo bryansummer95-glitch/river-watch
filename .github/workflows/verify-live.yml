@@ -20,11 +20,11 @@ jobs:
             echo 'Explanation route'
             curl -sS --max-time 20 -w '\n%{http_code}\n' 'https://river-watch.bryansummer95.workers.dev/explain' \
               -H 'Origin: https://bryansummer95-glitch.github.io' -H 'Content-Type: application/json' \
-              --data '{"facts":{"question":"Summarise the rehearsal result","towns":[{"town":"Clonmel","level":"Standby","peak":50,"reason":"Rehearsal result"}]}}'
+              --data '{"facts":{"question":"Summarise the rehearsal result","dischargeUnit":"cubic metres per second (m³/s)","towns":[{"town":"Clonmel","level":"Standby","peak":50,"reason":"Rehearsal result"}]}}'
           } > live-check.txt 2>&1
-          git switch -c live-endpoint-check
+          git switch -c live-endpoint-retest
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add live-check.txt
           git commit -m 'Record public endpoint check'
-          git push origin live-endpoint-check
+          git push origin live-endpoint-retest
