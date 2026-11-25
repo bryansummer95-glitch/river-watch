@@ -1,54 +1,64 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>River Watch</title>
-<style>
-  :root{font-family:system-ui,sans-serif;color:#132d38;background:#edf3f4}
-  *{box-sizing:border-box} body{margin:0} header{background:#103643;color:#fff}
-  main,.wrap{max-width:1120px;margin:auto;padding:1.5rem} h1{margin:.2rem 0;font-size:clamp(2rem,6vw,3.5rem)}
-  header p{margin:.25rem 0}.panel{background:white;border:1px solid #c9d8dc;border-radius:12px;padding:1.15rem;margin-bottom:1rem}
-  button,input{font:inherit;padding:.65rem .8rem;border-radius:7px;border:1px solid #78939b}
-  button{background:#155364;color:white;cursor:pointer}button:disabled{opacity:.65;cursor:wait}
-  input{width:100%;min-width:0}label{display:block;margin:.7rem 0 .25rem}
-  form,.examples{display:flex;gap:.5rem;flex-wrap:wrap}form input{flex:1 1 16rem}
-  .examples{margin-top:.75rem}.examples button{background:white;color:#155364;padding:.45rem .65rem}
-  summary{cursor:pointer;font-weight:650} .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:.8rem}
-  article{border:1px solid #c9d8dc;border-top:4px solid #78939b;padding:1rem;border-radius:9px}
-  article[data-level="Normal"]{border-top-color:#30836e}article[data-level="Standby"]{border-top-color:#a16513}
-  article[data-level="Barriers"]{border-top-color:#a83530}article h3{margin:0}p{line-height:1.55}
-  .error{color:#922921}.muted{color:#415f69}a{color:#155364}.scroll{overflow:auto}table{border-collapse:collapse;width:100%}
-  td,th{padding:.5rem;border-bottom:1px solid #c9d8dc;text-align:left;white-space:nowrap}
-  #explanation{white-space:pre-wrap} [hidden]{display:none!important}
-</style>
-<header><div class="wrap"><h1>River Watch</h1><p>Flood response for eight Irish towns</p></div></header>
-<main>
-  <section class="panel" aria-label="Ask River Watch">
-    <label for="question">Ask River Watch</label>
-    <form id="ask"><input id="question" maxlength="300" required value="What is tonight's plan?"><button id="submit">Ask</button></form>
-    <div class="examples">
-      <button type="button">Why is Fermoy at that level?</button>
-      <button type="button">What if the Suir at Clonmel reaches 150 m³/s?</button>
-      <button type="button">Which town should be first in line for a flood-defence study?</button>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102c29">
+  <meta name="description" content="River Watch brings river forecasts, rainfall warnings and local response plans together for eight Irish towns.">
+  <title>River Watch | Flood response dashboard</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to dashboard</a>
+  <header class="hero">
+    <div class="hero-inner wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Irish flood response dashboard</p>
+        <h1>River Watch</h1>
+        <p class="hero-description">Review river conditions and response recommendations for eight Irish towns.</p>
+      </div>
+      <figure class="river-image">
+        <img src="./irish-river.jpg" alt="Illustrative Irish river winding through green fields near a stone bridge" fetchpriority="high">
+        <figcaption>Illustrative river landscape</figcaption>
+      </figure>
     </div>
-    <p class="muted">AI can make mistakes. The Duty Officer makes and records the final decision by 16:00.</p>
-  </section>
-  <details class="panel" id="settings"><summary>Data and Groq settings</summary>
-    <label for="sheet">Google Sheet link with viewer access</label><input id="sheet" type="url">
-    <label for="worker">Public Cloudflare Worker URL</label><input id="worker" type="url">
-    <label for="key">Groq API key for browser mode</label><input id="key" type="password" autocomplete="off">
-    <p class="muted">Browser mode saves the key on this browser only. Use Forget key on a shared computer.</p>
-    <button id="save">Save settings</button> <button id="forget">Forget key</button>
-    <p id="settings-status" role="status"></p>
-  </details>
-  <p id="status" role="status"></p>
-  <section class="panel" id="answer" aria-label="River Watch answer" hidden></section>
-  <p class="muted">Development status · Open-Meteo river reaches are awaiting independent verification.</p>
-  <footer class="muted">
-    <a href="https://open-meteo.com/en/docs/flood-api">Open-Meteo / Copernicus GloFAS</a> ·
-    <a href="https://www.met.ie/Open_Data/json/warning_IRELAND.json">Met Éireann warnings</a>
-  </footer>
-</main>
-<script type="module" src="./app.mjs"></script>
+  </header>
+  <main class="wrap" id="main">
+    <section class="panel ask-panel" aria-labelledby="ask-title">
+      <h2 id="ask-title">Ask River Watch</h2>
+      <label class="sr-only" for="question">Your question</label>
+      <form id="ask">
+        <input id="question" maxlength="300" required value="What is tonight's plan?">
+        <button id="submit">Ask</button>
+      </form>
+      <div class="examples" aria-label="Example questions">
+        <button type="button">Why is Fermoy at that level?</button>
+        <button type="button">What if the Suir at Clonmel reaches 150 m³/s?</button>
+        <button type="button">Which town should be first in line for a flood-defence study?</button>
+      </div>
+      <p class="advisory">AI can make mistakes. The Duty Officer makes and records the final decision by 16:00.</p>
+    </section>
+    <p id="status" role="status"></p>
+    <section class="panel answer-panel" id="answer" aria-label="River Watch answer" hidden></section>
+    <details class="panel" id="settings">
+      <summary>Data and Groq settings</summary>
+      <div class="settings-fields">
+        <label for="sheet">Google Sheet link with viewer access</label><input id="sheet" type="url">
+        <label for="worker">Public Cloudflare Worker URL</label><input id="worker" type="url">
+        <label for="key">Groq API key for browser mode</label><input id="key" type="password" autocomplete="off">
+        <p class="muted">Browser mode saves the key on this browser only. Use Forget key on a shared computer.</p>
+        <div class="settings-actions"><button id="save">Save settings</button> <button id="forget">Forget key</button></div>
+        <p id="settings-status" role="status"></p>
+      </div>
+    </details>
+    <footer>
+      <p>Discharge values are model estimates. River location checks and data limitations are documented in the report.</p>
+      <div class="source-links">
+        <a href="https://open-meteo.com/en/docs/flood-api">Open-Meteo / Copernicus GloFAS</a>
+        <a href="https://www.met.ie/Open_Data/json/warning_IRELAND.json">Met Éireann warnings</a>
+      </div>
+    </footer>
+  </main>
+  <script type="module" src="./app.mjs"></script>
+</body>
 </html>
-
