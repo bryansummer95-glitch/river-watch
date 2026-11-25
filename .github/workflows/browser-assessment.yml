@@ -33,12 +33,12 @@ jobs:
             const csv = await (await fetch(sheetSource.origin + sheetSource.pathname.replace(/edit$/, 'export') + '?format=csv&gid=' + gid)).text();
             const sheet = parseSheet(csv);
             console.log('LIVE SHEET CELLS', 'Clonmel I2', sheet.Clonmel.flow_override_m3s, 'Fermoy J3', sheet.Fermoy.warning_override);
-            if (sheet.Clonmel.flow_override_m3s !== '150' || sheet.Fermoy.warning_override.toLowerCase() !== 'orange') throw Error('Expected live rehearsal overrides were not present');
+            if (sheet.Clonmel.flow_override_m3s || sheet.Fermoy.warning_override) throw Error('Sheet overrides have not both been cleared');
             const sheetPage = await browser.newPage({viewport:{width:1600,height:900}});
             try {
               await sheetPage.goto(sheetUrl,{waitUntil:'domcontentloaded',timeout:15000});
               await sheetPage.waitForTimeout(2500);
-              await sheetPage.screenshot({path:'evidence/sheet-rehearsal.png'});
+              await sheetPage.screenshot({path:'evidence/sheet-restored.png'});
             } catch (error) {console.log('Sheet screenshot:',error.message)}
             finally {await sheetPage.close()}
             const reference = await (await fetch(floodUrl('Fermoy'))).json();
@@ -60,7 +60,7 @@ jobs:
               await page.waitForFunction(() => !document.querySelector('#submit').disabled,{},{timeout:45000});
               const answer = await page.locator('#answer').innerText();
               if (i === 0) {
-                console.log('LIVE REHEARSAL MATCH',answer.includes('Clonmel · Barriers') && answer.includes('Sheet rehearsal · 150 m³/s') && answer.includes('Fermoy · Standby') && answer.includes('Sheet rehearsal warning · orange'));
+                console.log('RESTORED BASELINE MATCH', !answer.includes('Sheet rehearsal'));
                 console.log('CLONMEL CREW MATCH',answer.includes('Clonmel crew · Clonmel'));
               }
               if (i === 1) {
@@ -90,15 +90,15 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: river-watch-live-rehearsal
+          name: river-watch-restored-baseline
           path: evidence/
       - name: Make text evidence available for review
         if: always()
         run: |
-          git switch -c sheet-rehearsal-complete
+          git switch -c sheet-reset-check
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           printf '%s\n' 'https://github.com/bryansummer95-glitch/river-watch/actions/runs/'"$GITHUB_RUN_ID" > evidence/actions-run.txt
           git add evidence/*.txt
           git commit -m 'Record browser and independent percentile checks'
-          git push origin sheet-rehearsal-complete
+          git push origin sheet-reset-check
