@@ -1,0 +1,465 @@
+PRE-ANSWER Fermoy dates and values [ '2026-11-25', '2026-11-26', '2026-11-27' ] [ 37.19, 34.56, 32.04 ] peak 37.19 active feed items 0
+PRE-ANSWER Clonmel scenario: 150 exceeds P99 107.88; target Barriers if Sheet stock is available
+PRE-ANSWER study: Ennis has 17 runs; 9 in the last four winters and 7 in the first four
+PRE-ANSWER household question: council area office referral
+QUESTION What is tonight's plan? EXPECTED /Tonight’s plan/
+MATCH true 
+ Tonight’s plan
+
+Clonmel crew · No assignment
+
+Mallow crew · No assignment
+
+Athlone crew · No assignment
+
+Clonmel · Normal
+
+Suir · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 27.91 m³/s · P95 66.3 m³/s · P99 107.88 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 27.91 m³/s | 2026-11-26 · 26.93 m³/s | 2026-11-27 · 26.61 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 1 barrier sets · 4 pumps · 2000 sandbags · 6 staff on call
+
+Sheet note · Normal service
+
+Fermoy · Normal
+
+Blackwater · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 37.19 m³/s · P95 77.23 m³/s · P99 127.82 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 37.19 m³/s | 2026-11-26 · 34.56 m³/s | 2026-11-27 · 32.04 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 1 barrier sets · 3 pumps · 1500 sandbags · 4 staff on call
+
+Sheet note · Normal service
+
+Mallow · Normal
+
+Blackwater · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 19 m³/s · P95 44.6 m³/s · P99 71.33 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 19 m³/s | 2026-11-26 · 18.01 m³/s | 2026-11-27 · 17.11 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 1 barrier sets · 3 pumps · 1200 sandbags · 4 staff on call
+
+Sheet note · Mallow crew van in repair: the Mallow crew can work in Mallow only tonight
+
+Bandon · Normal
+
+Bandon · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 7.53 m³/s · P95 23.91 m³/s · P99 41.46 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 7.41 m³/s | 2026-11-26 · 7.2 m³/s | 2026-11-27 · 7.53 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 0 barrier sets · 2 pumps · 1800 sandbags · 3 staff on call
+
+Sheet note · Barrier set on loan to another council
+
+Enniscorthy · Normal
+
+Slaney · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 9.5 m³/s · P95 29.86 m³/s · P99 52.39 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 6.94 m³/s | 2026-11-26 · 8.42 m³/s | 2026-11-27 · 9.5 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 1 barrier sets · 2 pumps · 1000 sandbags · 3 staff on call
+
+Sheet note · Normal service
+
+Ennis · Normal
+
+Fergus · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 30.19 m³/s · P95 31.09 m³/s · P99 45.39 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 29.83 m³/s | 2026-11-26 · 28.31 m³/s | 2026-11-27 · 30.19 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 1 barrier sets · 2 pumps · 900 sandbags · 3 staff on call
+
+Sheet note · Normal service
+
+Athlone · Normal
+
+Shannon · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 45.34 m³/s · P95 142.35 m³/s · P99 186.71 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 43.77 m³/s | 2026-11-26 · 43.77 m³/s | 2026-11-27 · 45.34 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 1 barrier sets · 5 pumps · 2500 sandbags · 6 staff on call
+
+Sheet note · Town spans Westmeath and Roscommon
+
+Carrick-on-Shannon · Normal
+
+Shannon · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 34.73 m³/s · P95 62.24 m³/s · P99 88.84 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 20.78 m³/s | 2026-11-26 · 24.12 m³/s | 2026-11-27 · 34.73 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 1 barrier sets · 2 pumps · 800 sandbags · 2 staff on call
+
+Sheet note · Town spans Leitrim and Roscommon
+
+Groq explanation
+
+**River Watch – Tonight’s Plan (Calculation only)**  
+
+| Town | Current Status | Peak Flow (m³/s) | Reason for Status |
+|------|----------------|------------------|-------------------|
+| Clonmel | Normal | 27.91 | Flow remains below orange/red thresholds, no rain escalation |
+| Fermoy | Normal | 37.19 | Flow remains below orange/red thresholds, no rain escalation |
+| Mallow | Normal | 19.00 | Flow remains below orange/red thresholds, no rain escalation |
+| Bandon | Normal | 7.53 | Flow remains below orange/red thresholds, no rain escalation |
+| Enniscorthy | Normal | 9.50 | Flow remains below orange/red thresholds, no rain escalation |
+| Ennis | Normal | 30.19 | Flow remains below orange/red thresholds, no rain escalation |
+| Athlone | Normal | 45.34 | Flow remains below orange/red thresholds, no rain escalation |
+| Carrick‑on‑Shannon | Normal | 34.73 | Flow remains below orange/red thresholds, no rain escalation |
+
+**Key Points**
+
+- All monitored towns are **Normal** – flows are under the thresholds that would trigger orange or red alerts.
+- No escalation has been issued because rainfall conditions do not warrant higher warning levels.
+- The data come from the **Live forecast** feed.
+- There are **no flagged** conditions or overrides in any town.
+- The plan is **calculation‑only**; a Duty Officer has not yet reviewed or dispatched any action.
+
+*The Duty Officer will decide on any further steps.*
+
+Groq API usage · {"queue_time":0.052323978,"prompt_tokens":537,"prompt_time":0.028698523,"completion_tokens":344,"completion_time":0.390595499,"total_tokens":881,"total_time":0.419294022,"completion_tokens_details":{"reasoning_tokens":8}}
+QUESTION Why is Fermoy at that level? EXPECTED /Fermoy · tonight/
+INDEPENDENT FERMOY PEAK MATCH false
+MATCH true 
+ Fermoy · tonight
+Fermoy · Normal
+
+Blackwater · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 37.19 m³/s · P95 77.23 m³/s · P99 127.82 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 37.19 m³/s | 2026-11-26 · 34.56 m³/s | 2026-11-27 · 32.04 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 1 barrier sets · 3 pumps · 1500 sandbags · 4 staff on call
+
+Sheet note · Normal service
+
+Groq explanation
+
+Fermoy’s water‑level status is reported as **Normal**.  
+The reason given is that the current flow rates fall within the established thresholds for a normal status, and there is no escalation to orange or red rain‑warning levels.  
+
+Specifically:
+
+| Town | Level | Peak Flow (m³/s) | Reason for Status | Flagged |
+|------|-------|------------------|-------------------|---------|
+| Fermoy | Normal | 37.19 | Normal from flow thresholds, no orange/red rain escalation | No |
+
+The live forecast data used for this assessment shows that the river flow at Fermoy is below the limits that would trigger a higher warning flag, so the Duty Officer’s decision (as recorded in the system) is to keep the level at Normal. No additional uncertainty or crew assignments are noted in the current calculation.
+
+Groq API usage · {"queue_time":0.12267371,"prompt_tokens":539,"prompt_time":0.037028643,"completion_tokens":188,"completion_time":0.196447132,"total_tokens":727,"total_time":0.233475775,"completion_tokens_details":{"reasoning_tokens":7}}
+QUESTION What if the Suir at Clonmel reaches 150 m³/s? EXPECTED /What-if plan/
+CLONMEL BARRIERS MATCH true
+MATCH true 
+ What-if plan
+
+Clonmel rehearsal flow · 150 m³/s
+
+Clonmel crew · Clonmel
+
+Mallow crew · No assignment
+
+Athlone crew · No assignment
+
+Clonmel · Barriers
+
+Suir · Barriers from flow thresholds, no orange/red rain escalation
+
+What-if scenario · 150 m³/s · P95 66.3 m³/s · P99 107.88 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+Flow relative to P99 · 39.04%
+
+2026-11-25 · 27.91 m³/s | 2026-11-26 · 26.93 m³/s | 2026-11-27 · 26.61 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 1 barrier sets · 4 pumps · 2000 sandbags · 6 staff on call
+
+Sheet note · Normal service
+
+Clonmel crew to erect barriers before 18:00.
+
+Fermoy · Normal
+
+Blackwater · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 37.19 m³/s · P95 77.23 m³/s · P99 127.82 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 37.19 m³/s | 2026-11-26 · 34.56 m³/s | 2026-11-27 · 32.04 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 1 barrier sets · 3 pumps · 1500 sandbags · 4 staff on call
+
+Sheet note · Normal service
+
+Mallow · Normal
+
+Blackwater · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 19 m³/s · P95 44.6 m³/s · P99 71.33 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 19 m³/s | 2026-11-26 · 18.01 m³/s | 2026-11-27 · 17.11 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 1 barrier sets · 3 pumps · 1200 sandbags · 4 staff on call
+
+Sheet note · Mallow crew van in repair: the Mallow crew can work in Mallow only tonight
+
+Bandon · Normal
+
+Bandon · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 7.53 m³/s · P95 23.91 m³/s · P99 41.46 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 7.41 m³/s | 2026-11-26 · 7.2 m³/s | 2026-11-27 · 7.53 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 0 barrier sets · 2 pumps · 1800 sandbags · 3 staff on call
+
+Sheet note · Barrier set on loan to another council
+
+Enniscorthy · Normal
+
+Slaney · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 9.5 m³/s · P95 29.86 m³/s · P99 52.39 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 6.94 m³/s | 2026-11-26 · 8.42 m³/s | 2026-11-27 · 9.5 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 1 barrier sets · 2 pumps · 1000 sandbags · 3 staff on call
+
+Sheet note · Normal service
+
+Ennis · Normal
+
+Fergus · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 30.19 m³/s · P95 31.09 m³/s · P99 45.39 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 29.83 m³/s | 2026-11-26 · 28.31 m³/s | 2026-11-27 · 30.19 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 1 barrier sets · 2 pumps · 900 sandbags · 3 staff on call
+
+Sheet note · Normal service
+
+Athlone · Normal
+
+Shannon · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 45.34 m³/s · P95 142.35 m³/s · P99 186.71 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 43.77 m³/s | 2026-11-26 · 43.77 m³/s | 2026-11-27 · 45.34 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 1 barrier sets · 5 pumps · 2500 sandbags · 6 staff on call
+
+Sheet note · Town spans Westmeath and Roscommon
+
+Carrick-on-Shannon · Normal
+
+Shannon · Normal from flow thresholds, no orange/red rain escalation
+
+Live forecast · 34.73 m³/s · P95 62.24 m³/s · P99 88.84 m³/s
+
+Thresholds · Open-Meteo / GloFAS daily modelled discharge, 2016–2025.
+
+2026-11-25 · 20.78 m³/s | 2026-11-26 · 24.12 m³/s | 2026-11-27 · 34.73 m³/s
+
+Open-Meteo forecast
+
+Met Éireann · No matching rain warning in next 48 hours
+
+Sheet · 1 barrier sets · 2 pumps · 800 sandbags · 2 staff on call
+
+Sheet note · Town spans Leitrim and Roscommon
+
+Groq explanation
+
+**What the calculation tells you**
+
+- If the River Suir at Clonmel reaches a flow of **150 m³/s**, the water‑level status for each town is shown below.  
+- The data are derived from the *what‑if* scenario you asked for; they have not yet been checked or acted on by a Duty Officer.
+
+| Town | Level Category | Peak Flow (m³/s) | Reason for Category | Crew Assigned | Flagged for Action |
+|------|----------------|------------------|---------------------|---------------|-------------------|
+| **Clonmel** | Barriers | 150 | “Barriers from flow thresholds, no orange/red rain escalation” | Clonmel | **No** |
+| Fermoy | Normal | 37.19 | “Normal from flow thresholds, no orange/red rain escalation” | – | **No** |
+| Mallow | Normal | 19 | “Normal from flow thresholds, no orange/red rain escalation” | – | **No** |
+| Bandon | Normal | 7.53 | “Normal from flow thresholds, no orange/red rain escalation” | – | **No** |
+| Enniscorthy | Normal | 9.5 | “Normal from flow thresholds, no orange/red rain escalation” | – | **No** |
+| Ennis | Normal | 30.19 | “Normal from flow thresholds, no orange/red rain escalation” | – | **No** |
+| Athlone | Normal | 45.34 | “Normal from flow thresholds, no orange/red rain escalation” | – | **No** |
+| Carrick‑on‑Shannon | Normal | 34.73 | “Normal from flow thresholds, no orange/red rain escalation” | – | **No** |
+
+**Key points**
+
+- The only town that is **not normal** at this flow level is Clonmel, which is classified as **Barriers**.  
+- All towns are *not flagged* for any additional actions such as evacuation or emergency measures.  
+- The “Barriers” status means the water level is high enough to affect river‑bank barriers but does not trigger an orange or red weather‑related escalation.  
+- The **Crew** column indicates the team that would normally be responsible for Clonmel’s response; the other towns have no specific crew listed because their status remains
+
+Groq API usage · {"queue_time":0.073280919,"prompt_tokens":554,"prompt_time":0.00334256,"completion_tokens":500,"completion_time":0.714726353,"total_tokens":1054,"total_time":0.718068913,"prompt_tokens_details":{"cached_tokens":512},"completion_tokens_details":{"reasoning_tokens":8}}
+QUESTION Which town should be first in line for a flood-defence study? EXPECTED /Flood-defence study priority/
+STUDY FIGURES MATCH true
+MATCH true 
+ Flood-defence study priority
+
+Ennis · 17 events. Last four winters: 9; first four: 7. The last four had more events.
+
+Town	P95 m³/s	P99 m³/s	2016/17	2017/18	2018/19	2019/20	2020/21	2021/22	2022/23	2023/24	2024/25	Total
+Ennis	31.09	45.39	1	0	1	5	1	0	3	5	1	17
+Mallow	44.6	71.33	1	0	0	1	3	1	1	3	3	13
+Carrick-on-Shannon	62.24	88.84	0	1	1	2	5	1	1	0	1	12
+Clonmel	66.3	107.88	0	0	0	2	3	2	1	2	1	11
+Bandon	23.91	41.46	0	0	0	1	2	0	0	3	5	11
+Fermoy	77.23	127.82	0	0	0	1	3	0	1	2	3	10
+Enniscorthy	29.86	52.39	0	1	0	1	1	0	0	2	2	7
+Athlone	142.35	186.71	0	0	0	1	0	0	0	0	0	1
+
+Each event is one consecutive run at or above P99 within an October–March winter. Event counts cannot estimate flood damage or account for existing defences.
+
+Saved Open-Meteo / GloFAS summary
+Groq explanation
+
+**River‑Watch flood‑study data – plain‑English summary**
+
+The supplied data come from a River‑Watch calculation that looked at the flood risk at a number of towns in Ireland. The numbers are purely statistical – they come from model‑generated river‑discharge figures, not from any real‑world measurement. The calculation was run with the River‑Watch software and has **not yet been reviewed or approved by a Duty Officer**; therefore the results are only a preliminary reference.
+
+---
+
+### 1. General format of each town’s data
+
+| Item | Meaning |
+|------|---------|
+| **town** | Name of the town. |
+| **days** | Total number of days covered (3653, which is 10 years + 3 days). |
+| **median** | The middle value of the daily river‑discharge (m³/s). 50 % of days had a discharge below this number, 50 % above. |
+| **p95** | The 95th percentile discharge – only 5 % of days exceed this value. |
+| **p99** | The 99th percentile discharge – only 1 % of days exceed this value. |
+| **events** | How many flood events (discharge > 95th percentile) happened in each 12‑month period, from 2016/17 to 2024/25. |
+| **total** | Sum of all flood events over the whole period. |
+| **firstFour** | Number of events in the first four years (2016‑2019). |
+| **lastFour** | Number of events in the last four years (2021‑2024). |
+| **source** | URL of the API call that supplied the data. |
+| **requested** | Latitude/longitude of the town that were requested from the API. |
+| **grid** | Latitude/longitude of the model grid cell that actually supplied the data. |
+
+All discharges are expressed in cubic metres per second (m³/s).
+
+---
+
+### 2. Town‑by‑town details
+
+| Town | Median (m³/s) | p95 (m³/s) | p99 (m³/s) | Total flood events | Events 2016‑2019 | Events 2021‑2024 | Source |
+|
+
+Groq API usage · {"queue_time":0.051901199,"prompt_tokens":1789,"prompt_time":0.089867839,"completion_tokens":500,"completion_time":0.514259839,"total_tokens":2289,"total_time":0.604127678,"completion_tokens_details":{"reasoning_tokens":12}}
+QUESTION Will my house in Mallow flood tonight? EXPECTED /outside River Watch’s scope/
+MATCH true 
+ This question is outside River Watch’s scope. Contact the council’s area office.
