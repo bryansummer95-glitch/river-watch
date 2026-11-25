@@ -14,7 +14,7 @@ jobs:
           {
             echo 'Public Sheet export'
             curl -sSL --max-time 18 -o /tmp/river-sheet -w 'HTTP %{http_code} (%{content_type})\n' 'https://docs.google.com/spreadsheets/d/1LmWujiP7VHOLDa-saaDJDwo8YHwtD_kHLwKygwvG31o/export?format=csv&gid=1645599359' || true
-            node -e 'import("./plan.mjs").then(({parseSheet}) => { try { console.log("Validated Sheet rows: " + Object.keys(parseSheet(require("fs").readFileSync("/tmp/river-sheet", "utf8"))).length) } catch (e) { console.log("Sheet validation: " + e.message) } })'
+            node -e 'import("./plan.mjs").then(({parseSheet}) => { try { console.log("Validated Sheet rows: " + Object.keys(parseSheet(require("fs").readFileSync("/tmp/river-sheet", "utf8"))).length); const sheet = parseSheet(require("fs").readFileSync("/tmp/river-sheet", "utf8")); console.log("All rehearsal cells blank: " + Object.values(sheet).every(row => !row.flow_override_m3s && !row.warning_override)) } catch (e) { console.log("Sheet validation: " + e.message) } })'
             echo 'Public historical summary'
             curl -sS --max-time 15 -o /dev/null -w 'HTTP %{http_code}\n' 'https://bryansummer95-glitch.github.io/river-watch/history.json' || true
             for url in 'https://bryansummer95-glitch.github.io/river-watch/' 'https://river-watch.bryansummer95.workers.dev/health'; do
@@ -23,9 +23,9 @@ jobs:
               echo
             done
           } > live-check.txt 2>&1
-          git switch -c replacement-sheet-check
+          git switch -c final-reset-verification
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add live-check.txt
           git commit -m 'Record public endpoint check'
-          git push origin replacement-sheet-check
+          git push origin final-reset-verification
