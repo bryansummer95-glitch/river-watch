@@ -74,15 +74,27 @@ async function teamSheet() {
   return parseSheet(await response.text());
 }
 
-async function forecast(town, now) {
-  const url = floodUrl(town);
-  const data = await (await get(url)).json();
+function forecast(town, data, now) {
   const daily = data.daily;
   const today = dublinDay.format(now);
   const last = new Date(Date.parse(today) + 172800000).toISOString().slice(0, 10);
   const days = dateRange(today, last).map(date => [date, daily.river_discharge[daily.time.indexOf(date)]]);
   if (days.some(([, value]) => !Number.isFinite(value) || value < 0)) throw Error('Incomplete three-day forecast');
-  return { days, peak:Math.max(...days.map(([, value]) => value)), url, grid:[data.latitude, data.longitude] };
+  return { days, peak:Math.max(...days.map(([, value]) => value)), url:floodUrl(town), grid:[data.latitude, data.longitude] };
+}
+
+async function forecasts(now) {
+  const url = new URL(floodUrl(names[0]));
+  url.searchParams.set('latitude', names.map(name => towns[name][0]).join(','));
+  url.searchParams.set('longitude', names.map(name => towns[name][1]).join(','));
+  const data = await (await get(url)).json();
+  if (!Array.isArray(data) || data.length !== names.length) throw Error('Unexpected multi-town forecast response');
+  const flows = {}, errors = [];
+  for (const [index, town] of names.entries()) {
+    try { flows[town] = forecast(town, data[index], now); }
+    catch (error) { errors.push(town + ' · ' + error.message); }
+  }
+  return {flows, errors};
 }
 
 async function historyData() {
@@ -92,6 +104,7 @@ async function historyData() {
     const row = data.towns[name];
     if (!row || row.days !== 3653 || !Number.isFinite(row.p95) || !Number.isFinite(row.p99) ||
         row.p95 < 0 || row.p99 < row.p95 || !Number.isInteger(row.total)) throw Error('Incomplete history for ' + name);
+    if (row.source !== floodUrl(name, true)) throw Error('Historical point does not match the forecast point for ' + name);
   }
   return data.towns;
 }
@@ -222,12 +235,13 @@ $('ask').onsubmit = async event => {
   answer.replaceChildren();
   $('status').textContent = 'Reading the Sheet, forecast and warnings…';
   const now = Date.now();
-  const calls = await Promise.allSettled([teamSheet(), warnings(), historyData(), ...names.map(town => forecast(town,now))]);
+  const calls = await Promise.allSettled([teamSheet(), warnings(), historyData(), forecasts(now)]);
   const value = index => calls[index].status === 'fulfilled' ? calls[index].value : null;
   const sheet = value(0), warningFeed = value(1), history = value(2);
-  const flows = Object.fromEntries(names.map((name, i) => [name, value(i + 3)]));
+  const {flows, errors:forecastErrors} = value(3) ?? {flows:{},errors:[]};
   const errors = calls.flatMap((result, i) => result.status === 'rejected'
-    ? [[['Sheet','Met Éireann warnings','Historical summary',...names][i], result.reason.message].join(' · ')] : []);
+    ? [[['Sheet','Met Éireann warnings','Historical summary','Open-Meteo forecast'][i], result.reason.message].join(' · ')] : []);
+  errors.push(...forecastErrors);
   answer.hidden = false;
   $('status').textContent = 'Sources requested ' + dateFormatter.format(now) + ' (Ireland time).';
   try {
