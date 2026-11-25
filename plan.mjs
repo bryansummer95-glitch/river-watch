@@ -1,11 +1,11 @@
 export const towns = {
   Clonmel: [52.352, -7.704, 'EI26', 'Suir'],
-  Fermoy: [52.139, -8.276, 'EI04', 'Blackwater'],
+  Fermoy: [52.139, -8.226, 'EI04', 'Blackwater'],
   Mallow: [52.133, -8.643, 'EI04', 'Blackwater'],
-  Bandon: [51.747, -8.739, 'EI04', 'Bandon'],
+  Bandon: [51.747, -8.689, 'EI04', 'Bandon'],
   Enniscorthy: [52.502, -6.563, 'EI30', 'Slaney'],
-  Ennis: [52.845, -8.981, 'EI03', 'Fergus'],
-  Athlone: [53.423, -7.943, 'EI29 EI24', 'Shannon'],
+  Ennis: [52.845, -9.031, 'EI03', 'Fergus'],
+  Athlone: [53.423, -7.993, 'EI29 EI24', 'Shannon'],
   'Carrick-on-Shannon': [53.945, -8.096, 'EI14 EI24', 'Shannon']
 };
 
