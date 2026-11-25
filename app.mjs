@@ -142,8 +142,9 @@ function showPlan(plan, question, scenario, selected, incomplete) {
     if (item.crew) add(card, 'p', item.crew + ' crew to erect barriers before 18:00.');
     if (item.level === 'Standby') add(card, 'p', 'Confirm staff on call, check pumps and stage sandbags.');
   }
-  return { question, towns:plan.map(({town, level, peak, crew, reason, flagged, flowSource, warningOverride}) =>
-    ({town, level, peak, crew, reason, flagged, flowSource, warningOverride})), incomplete };
+  return { question, dischargeUnit:'cubic metres per second (m³/s)',
+    towns:plan.map(({town, level, peak, crew, reason, flagged, flowSource, warningOverride}) =>
+      ({town, level, peak, crew, reason, flagged, flowSource, warningOverride})), incomplete };
 }
 
 function showHistory(history, question) {
@@ -171,7 +172,8 @@ function showHistory(history, question) {
   }
   add(answer, 'p', 'Each event is one consecutive run at or above P99 within an October–March winter. Event counts cannot estimate flood damage or account for existing defences.');
   link(answer, 'Saved Open-Meteo / GloFAS summary', './history.json');
-  return {question, leaders, counts:order.map(town => ({town, ...history[town]}))};
+  return {question, dischargeUnit:'cubic metres per second (m³/s)', leaders,
+    counts:order.map(town => ({town, ...history[town]}))};
 }
 
 async function explain(facts) {
