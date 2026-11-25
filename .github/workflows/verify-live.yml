@@ -12,6 +12,11 @@ jobs:
       - name: Check deployment and relay
         run: |
           {
+            echo 'Public Sheet export'
+            curl -sSL --max-time 18 -o /tmp/river-sheet -w 'HTTP %{http_code} (%{content_type})\n' 'https://docs.google.com/spreadsheets/d/1WJ2YXgY9cQZDdYnYe1-y9Vz8l74bur8Q2Gr5GgmsJfo/export?format=csv&gid=0' || true
+            node -e 'import("./plan.mjs").then(({parseSheet}) => { try { console.log("Validated Sheet rows: " + Object.keys(parseSheet(require("fs").readFileSync("/tmp/river-sheet", "utf8"))).length) } catch (e) { console.log("Sheet validation: " + e.message) } })'
+            echo 'Public historical summary'
+            curl -sS --max-time 15 -o /dev/null -w 'HTTP %{http_code}\n' 'https://bryansummer95-glitch.github.io/river-watch/history.json' || true
             for url in 'https://bryansummer95-glitch.github.io/river-watch/' 'https://river-watch.bryansummer95.workers.dev/health'; do
               echo "$url"
               curl -sS --max-time 15 -o /tmp/river-body -w '%{http_code}\n' "$url" && head -c 300 /tmp/river-body
@@ -22,9 +27,9 @@ jobs:
               -H 'Origin: https://bryansummer95-glitch.github.io' -H 'Content-Type: application/json' \
               --data '{"facts":{"question":"Summarise the rehearsal result","dischargeUnit":"cubic metres per second (m³/s)","towns":[{"town":"Clonmel","level":"Standby","peak":50,"reason":"Rehearsal result"}]}}'
           } > live-check.txt 2>&1
-          git switch -c live-endpoint-retest
+          git switch -c live-sheet-check
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add live-check.txt
           git commit -m 'Record public endpoint check'
-          git push origin live-endpoint-retest
+          git push origin live-sheet-check
