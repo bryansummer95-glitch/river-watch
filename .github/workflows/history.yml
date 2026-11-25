@@ -5,7 +5,7 @@ on:
       - '.github/workflows/history.yml'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   history:
     runs-on: ubuntu-latest
@@ -14,8 +14,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - run: node download-history.mjs
-      - run: cat history.json
+      - name: Download and capture diagnostics
+        run: node download-history.mjs 2>&1 | tee history-download.log
+        continue-on-error: true
+      - name: Save candidate results on a review branch
+        run: |
+          git switch -c history-candidate
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add history-download.log
+          if test -f history.json; then git add history.json; fi
+          git commit -m 'Record candidate River Watch history'
+          git push origin history-candidate
+      - name: Confirm a complete download
+        run: test -s history.json
       - uses: actions/upload-artifact@v4
         with:
           name: river-watch-history
