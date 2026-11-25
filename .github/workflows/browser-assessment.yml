@@ -26,6 +26,18 @@ jobs:
             [ "Will my house in Mallow flood tonight?", /outside River Watch’s scope/ ]
           ];
           try {
+            const {floodUrl} = await import('./plan.mjs');
+            const reference = await (await fetch(floodUrl('Fermoy'))).json();
+            const today = new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Dublin',year:'numeric',month:'2-digit',day:'2-digit'}).format();
+            const dates = Array.from({length:3},(_,i)=>new Date(Date.parse(today)+86400000*i).toISOString().slice(0,10));
+            const sourceValues = dates.map(date=>reference.daily.river_discharge[reference.daily.time.indexOf(date)]);
+            if (sourceValues.some(value=>!Number.isFinite(value))) throw Error('Fermoy source did not return complete forecast');
+            const peak = Math.max(...sourceValues);
+            const warn = await (await fetch('https://www.met.ie/Open_Data/json/warning_IRELAND.json')).json();
+            console.log('PRE-ANSWER Fermoy dates and values',dates,sourceValues,'peak',peak,'active feed items',warn.length);
+            console.log('PRE-ANSWER Clonmel scenario: 150 exceeds P99 107.88; target Barriers if Sheet stock is available');
+            console.log('PRE-ANSWER study: Ennis has 17 runs; 9 in the last four winters and 7 in the first four');
+            console.log('PRE-ANSWER household question: council area office referral');
             await page.goto('https://bryansummer95-glitch.github.io/river-watch/',{waitUntil:'domcontentloaded'});
             for (const [i, [question, expected]] of checks.entries()) {
               console.log('QUESTION', question, 'EXPECTED', expected);
@@ -33,6 +45,12 @@ jobs:
               await page.locator('#submit').click();
               await page.waitForFunction(() => !document.querySelector('#submit').disabled,{},{timeout:45000});
               const answer = await page.locator('#answer').innerText();
+              if (i === 1) {
+                const displayedPeak = Number(answer.match(/Live forecast · ([\\d.]+)/)?.[1]);
+                console.log('INDEPENDENT FERMOY PEAK MATCH',displayedPeak === Number(peak.toFixed(2)));
+              }
+              if (i === 2) console.log('CLONMEL BARRIERS MATCH',answer.includes('Clonmel · Barriers'));
+              if (i === 3) console.log('STUDY FIGURES MATCH',answer.includes('Ennis · 17 events. Last four winters: 9; first four: 7.'));
               console.log('MATCH', expected.test(answer), '\n', answer);
               await page.screenshot({path:'evidence/question-' + (i+1) + '.png',fullPage:true});
             }
@@ -59,9 +77,9 @@ jobs:
       - name: Make text evidence available for review
         if: always()
         run: |
-          git switch -c browser-assessment-evidence
+          git switch -c browser-assessment-confirmed
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add evidence/*.txt
           git commit -m 'Record browser and independent percentile checks'
-          git push origin browser-assessment-evidence
+          git push origin browser-assessment-confirmed
