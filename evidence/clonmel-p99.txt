@@ -1,0 +1,3 @@
+Daily records: 3653
+Independent Python inclusive P99: 107.88 m³/s
+Saved P99: 107.88000000000001 m³/s
